@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Recuperadora J&C: recogemos, clasificamos y te premiamos por tu material reciclable en Medellín. Servicio puerta a puerta para hogares y negocios.">
+    <title>Recuperadora J&C | Transformando Medellín</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2ECC71">
+    <meta name="color-scheme" content="light">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Recuperadora J&C">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+
+    <!-- Fuentes: Poppins (Títulos) y Quicksand (Cuerpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="offlineBar" class="offline-bar" hidden>
+        <i class="fas fa-wifi"></i> Sin conexión &mdash; mostrando la versión guardada
+    </div>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#inicio" class="logo">
+                    <img src="icons/icon-192.png" alt="Logo Recuperadora J&C" class="logo-img" width="44" height="44">
+                    RECUPERADORA J&amp;C
+                </a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Materiales</a></li>
+                    <li><a href="#contacto" class="cta-nav">Solicitar Recogida</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+
+        <div class="container hero-container">
+            <div class="hero-text reveal">
+                <h4><i class="fas fa-leaf text-primary"></i> Servicio de Reciclaje Premium</h4>
+                <h1>Medellín más limpia, <br><span>un hogar a la vez.</span></h1>
+                <p>Olvídate de acumular basura. Nosotros recogemos, clasificamos y te premiamos por tu material reciclable directamente en la puerta de tu casa o negocio.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">Agendar Ahora</a>
+                    <a href="#como-funciona" class="btn btn-outline">¿Cómo funciona?</a>
+                </div>
+            </div>
+            <div class="hero-image reveal">
+                <div class="youtube-channel-card" aria-label="Canal de YouTube Los Recomendados">
+                    <div class="youtube-channel-cover">
+                        <span class="youtube-channel-cover-label"><i class="fab fa-youtube" aria-hidden="true"></i> CANAL DE YOUTUBE</span>
+                        <i class="fab fa-youtube youtube-channel-cover-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="youtube-channel-info">
+                        <div class="youtube-channel-profile">
+                            <span class="youtube-channel-avatar" aria-hidden="true"><i class="fab fa-youtube"></i></span>
+                            <div class="youtube-channel-details">
+                                <h2>Los Recomendados</h2>
+                                <p>@losrecomendados-co</p>
+                            </div>
+                        </div>
+                        <p class="youtube-channel-description">Descubre el canal y sus recomendaciones en YouTube.</p>
+                        <div class="youtube-channel-actions">
+                            <a class="youtube-channel-visit" href="https://www.youtube.com/@losrecomendados-co" target="_blank" rel="noopener noreferrer"><i class="fas fa-play" aria-hidden="true"></i> Visitar canal</a>
+                            <a class="youtube-channel-subscribe" href="https://www.youtube.com/@losrecomendados-co?sub_confirmation=1" target="_blank" rel="noopener noreferrer">Suscribirme</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3>+1,200</h3>
+                <p>Hogares Atendidos</p>
+            </div>
+            <div class="stat-item">
+                <h3>50 Tons</h3>
+                <p>Material Recuperado</p>
+            </div>
+            <div class="stat-item">
+                <h3>15</h3>
+                <p>Barrios en Medellín</p>
+            </div>
+            <div class="stat-item">
+                <h3>24h</h3>
+                <p>Tiempo de Respuesta</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="como-funciona" class="steps-section container">
+        <div class="section-header reveal">
+            <span>Proceso Simple</span>
+            <h2>Reciclar nunca fue tan fácil</h2>
+            <p>Solo necesitas 3 pasos para convertir tus residuos en recursos.</p>
+        </div>
+
+        <div class="steps-container">
+            <div class="step-card reveal">
+                <div class="step-number">1</div>
+                <h3>Separa</h3>
+                <p>Junta tus botellas, cartón, papel y latas limpias en una caja o bolsa.</p>
+            </div>
+            <div class="step-card reveal">
+                <div class="step-number">2</div>
+                <h3>Agenda</h3>
+                <p>Escríbenos por WhatsApp o llena el formulario para programar la visita.</p>
+            </div>
+            <div class="step-card reveal">
+                <div class="step-number">3</div>
+                <h3>Gana</h3>
+                <p>Recogemos en tu puerta y te damos la oportunidad de acumular puntos con el peso del material entregado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS GLASSMORPHISM -->
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Materiales Aceptados</h2>
+                <p>Asegúrate de que estén limpios y secos.</p>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-item reveal">
+                    <i class="fas fa-wine-bottle"></i>
+                    <h4>Plástico PET</h4>
+                </div>
+                <div class="service-item reveal">
+                    <i class="fas fa-box"></i>
+                    <h4>Cartón/Papel</h4>
+                </div>
+                <div class="service-item reveal">
+                    <i class="fas fa-beer"></i>
+                    <h4>Aluminio</h4>
+                </div>
+                <div class="service-item reveal">
+                    <i class="fas fa-glass-martini"></i>
+                    <h4>Vidrio</h4>
+                </div>
+                <div class="service-item reveal">
+                    <i class="fas fa-laptop"></i>
+                    <h4>Electrónicos</h4>
+                </div>
+                <div class="service-item reveal">
+                    <i class="fas fa-newspaper"></i>
+                    <h4>Revistas</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="nosotros" class="testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <span>Testimonios</span>
+                <h2>Lo que dicen nuestros vecinos</h2>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card reveal">
+                    <div class="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Excelente servicio. Antes botaba todo porque no tenía tiempo de ir a un punto de acopio. Ahora J&C viene hasta mi edificio en Laureles."</p>
+                        <br>
+                        <strong>- Maria Camila R.</strong>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Muy puntuales y amables. Me encanta que pesen el material delante de uno y paguen lo justo. Súper recomendados."</p>
+                        <br>
+                        <strong>- Carlos E.</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO Y MAPA -->
+    <section id="contacto" class="contact-section container">
+        <div class="contact-layout reveal">
+            <div class="contact-form">
+                <h3>Solicita tu Recogida</h3>
+                <p class="form-intro">Completa los datos y envía tu solicitud directamente por WhatsApp.</p>
+                <form id="pickupForm" novalidate>
+                    <input type="text" name="nombre" placeholder="Tu Nombre" autocomplete="name" required>
+                    <input type="text" name="direccion" placeholder="Dirección en Medellín / Bello / Envigado" autocomplete="street-address" required>
+                    <input type="tel" name="celular" placeholder="Celular / WhatsApp" autocomplete="tel" inputmode="tel" required>
+                    <select name="material" required>
+                        <option value="">¿Qué material tienes?</option>
+                        <option>Mezclado (Varios)</option>
+                        <option>Solo Cartón</option>
+                        <option>Solo Plástico</option>
+                        <option>Chatarra/Metal</option>
+                        <option>Solo Vidrio</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar Solicitud</button>
+                    <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+            <div class="map-wrapper">
+                <iframe title="Ubicación Recuperadora J&C en Medellín" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7389029370263!2d-75.52476632346973!3d6.252487622110654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442ebb5f32a2b9%3A0x8c8c8c8c8c8c8c8c!2sCra%2044%20%2366-198%2C%20Manrique%20Central%20II%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1711270800000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>Recuperadora J&amp;C</h2>
+                    <p>Hacemos de la sostenibilidad algo simple y rentable para todos. Únete a la revolución verde de Medellín.</p>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@losrecomendados-co" target="_blank" rel="noopener noreferrer" aria-label="YouTube Los Recomendados"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="https://wa.me/573008152411" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Recuperadora J&C"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Materiales aceptados</a></li>
+                        <li><a href="#como-funciona">Cómo funciona</a></li>
+                        <li><a href="#contacto">Solicitar recogida</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-phone text-primary"></i> <a href="tel:+573008152411">+57 300 815 2411</a></li>
+                        <li><i class="fas fa-envelope text-primary"></i> info@recuperadorajyc.com</li>
+                        <li><i class="fas fa-clock text-primary"></i> Lun-Vie: 8am - 6pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="year">2024</span> Recuperadora J&amp;C. Diseño Web Pro.
+            </div>
+        </div>
+    </footer>
+
+    <button id="installBtn" class="install-btn" type="button" hidden>
+        <i class="fas fa-download"></i> Instalar App
+    </button>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
