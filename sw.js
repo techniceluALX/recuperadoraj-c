@@ -1,5 +1,5 @@
 /* Service Worker - Recuperadora J&C PWA */
-var CACHE_NAME = 'rjc-cache-v3';
+var CACHE_NAME = 'rjc-cache-v4';
 var OFFLINE_URL = 'index.html';
 
 var PRECACHE_URLS = [

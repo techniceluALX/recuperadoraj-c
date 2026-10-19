@@ -118,27 +118,65 @@
 
     /* ---------- PWA: PROMPT DE INSTALACIÓN ---------- */
     var installBtn = document.getElementById('installBtn');
+    var installHelp = document.getElementById('installHelp');
     var deferredPrompt = null;
+
+    function isAppInstalled() {
+        return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches)
+            || navigator.standalone === true;
+    }
+
+    if (installBtn) installBtn.hidden = isAppInstalled();
 
     window.addEventListener('beforeinstallprompt', function (e) {
         e.preventDefault();
         deferredPrompt = e;
-        if (installBtn) installBtn.hidden = false;
     });
 
     if (installBtn) {
         installBtn.addEventListener('click', function () {
-            if (!deferredPrompt) return;
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.finally(function () {
-                deferredPrompt = null;
+            if (isAppInstalled()) {
                 installBtn.hidden = true;
+                return;
+            }
+
+            if (!deferredPrompt) {
+                if (!installHelp) return;
+                installHelp.hidden = false;
+
+                var isSecureInstallContext = location.protocol === 'https:'
+                    || (window.isSecureContext
+                        && ['localhost', '127.0.0.1', '[::1]'].indexOf(location.hostname) !== -1);
+                if (!isSecureInstallContext) {
+                    installHelp.textContent = 'Para instalar la aplicación, abre el sitio publicado usando una conexión HTTPS.';
+                    return;
+                }
+
+                var isAppleMobile = /iPhone|iPad|iPod/.test(navigator.userAgent)
+                    || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+                installHelp.textContent = isAppleMobile
+                    ? 'En Safari, toca Compartir y luego “Agregar a pantalla de inicio”.'
+                    : 'Abre el menú del navegador (⋮) y elige “Instalar aplicación” o “Agregar a pantalla principal”.';
+                return;
+            }
+
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then(function (choiceResult) {
+                deferredPrompt = null;
+                if (choiceResult.outcome === 'accepted') {
+                    installBtn.hidden = true;
+                    if (installHelp) installHelp.hidden = true;
+                }
+            }).catch(function (error) {
+                console.warn('No se pudo completar la instalación de la aplicación:', error);
+                deferredPrompt = null;
             });
         });
     }
 
     window.addEventListener('appinstalled', function () {
         if (installBtn) installBtn.hidden = true;
+        if (installHelp) installHelp.hidden = true;
         deferredPrompt = null;
     });
 })();

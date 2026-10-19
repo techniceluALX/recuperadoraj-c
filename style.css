@@ -149,8 +149,8 @@ nav {
 }
 
 .logo-img {
-    height: 44px;
-    width: 44px;
+    height: 48px;
+    width: 48px;
     object-fit: contain;
     transition: transform 0.3s ease;
     flex-shrink: 0;
@@ -669,6 +669,22 @@ footer {
 }
 .install-btn[hidden] { display: none; }
 
+.install-help {
+    position: fixed;
+    right: 18px;
+    bottom: calc(82px + env(safe-area-inset-bottom, 0px));
+    z-index: 1200;
+    width: min(320px, calc(100vw - 36px));
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: var(--white);
+    color: var(--dark);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+.install-help[hidden] { display: none; }
+
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -782,6 +798,7 @@ footer {
     .map-wrapper { min-height: 260px; }
 
     .install-btn { right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }
+    .install-help { right: 12px; bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
 }
 
 @media (max-width: 360px) {
